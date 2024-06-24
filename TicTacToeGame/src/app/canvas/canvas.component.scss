@@ -1,0 +1,19 @@
+div.canvasContainer {
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas: "a b c";
+  span.block {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 0.5rem;
+    border: 0.2rem solid #ffffff;
+
+    &.circle::before {
+      content: url(/images/circle-icon.svg);
+    }
+
+    &.cross::before {
+      content: url(/images/cross-icon.svg);
+    }
+  }
+}

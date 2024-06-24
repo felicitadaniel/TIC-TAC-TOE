@@ -1,0 +1,110 @@
+<div class="canvasContainer">
+  <span
+    id="block00"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[0][0] === 0
+        ? 'block'
+        : game()[0][0] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block10"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[1][0] === 0
+        ? 'block'
+        : game()[1][0] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block20"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[2][0] === 0
+        ? 'block'
+        : game()[2][0] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block01"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[0][1] === 0
+        ? 'block'
+        : game()[0][1] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block11"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[1][1] === 0
+        ? 'block'
+        : game()[1][1] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block21"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[2][1] === 0
+        ? 'block'
+        : game()[2][1] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block02"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[0][2] === 0
+        ? 'block'
+        : game()[0][2] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block12"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[1][2] === 0
+        ? 'block'
+        : game()[1][2] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+  <span
+    id="block22"
+    class="block"
+    (click)="clickBox($event.target)"
+    [className]="
+      game()[2][2] === 0
+        ? 'block'
+        : game()[2][2] === 1
+        ? 'block cross'
+        : 'block circle'
+    "
+  ></span>
+</div>

@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap");
+
+main.main {
+  div.content {
+    background-color: #333333;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    h1 {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+      font-size: 3rem;
+    }
+    button {
+      font-family: "Roboto Mono", monospace;
+      font-weight: 400;
+      color: #ffffff;
+      font-size: 1.5rem;
+      background: transparent;
+      padding: 0.5rem 1rem;
+      border: 0.2rem solid #ffffff;
+      border-radius: 0.5rem;
+    }
+    div.turn {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: row;
+      gap: 5rem;
+
+      img {
+        padding-bottom: 1rem;
+        &.turn {
+          border-bottom: 0.5rem solid #ffffff;
+        }
+      }
+    }
+
+    div.winner {
+      font-family: "Roboto Mono", monospace;
+      color: #ffffff;
+      font-size: 2rem;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      span {
+        width: 3rem;
+        height: 3rem;
+        &.circle {
+          content: url(/images/circle-icon.svg);
+        }
+
+        &.cross {
+          content: url(/images/cross-icon.svg);
+        }
+      }
+    }
+  }
+}
