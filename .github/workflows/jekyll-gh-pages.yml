@@ -22,7 +22,7 @@ jobs:
         run: npm install && npm run build:prod
 
       - name: Deploy to GitHub Pages
-        uses: felicitadaniel/tic-tac-toe@v4
+        uses: felicitadaniel/tic-tac-toe@v1
         with:
           folder: tic-tac-toe-game/dist/browser
           branch: prod
