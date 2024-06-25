@@ -17,13 +17,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: Build Angular app to prod
-        working-directory: tic-tac-toe-game
-        run: npm install && npm run build:prod
+      - name: Install Dependencies
+        run: npm install
 
-      - name: Deploy to GitHub Pages
-        uses: felicitadaniel/tic-tac-toe@v1
-        with:
-          folder: tic-tac-toe-game/dist/browser
-          branch: prod
-          token: ${{ secrets.GH_TOKEN }}
+      - name: Build Angular App
+        run: npm run build
+
+      - name: Deploy to gh pages
+        run: |
+          npx angular-cli-ghpages --dir=dist/tic-tac-toe-game
+        env:
+          CI: true
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
