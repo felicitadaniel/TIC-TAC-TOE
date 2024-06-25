@@ -1,31 +1,22 @@
-name: GitHub Pages
-
+name: Build and Deploy
 on:
   push:
     branches:
-      - main
-
+      - master
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v3
+      - name: All things angular
+        uses: felicitadaniel/TIC-TAC-TOE@v1 ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
         with:
-          node-version: "20"
+          github_access_token: ${{ secrets.GH_TOKEN }} # see the Configuration section for how you can create secrets
+          build_configuration: production # The build environment for the app. please look configurations in your angular.json
+          base_href: https://felicitadaniel.github.io/TIC-TAC-TOE/ # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+          deploy_branch: master # The branch the action should deploy to.
+          angular_dist_build_folder: dist/tic-tac-toe-game # The folder where your project is supposed to be after running ng build by the action.
 
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Build Angular App
-        run: npm run build
-
-      - name: Deploy to gh pages
-        run: |
-          npx angular-cli-ghpages --dir=dist/tic-tac-toe-game/browser --no-silent
-        env:
-          CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+permissions:
+  contents: write # Allow write permission to GITHUB_TOKEN to commit to deploy branch.
