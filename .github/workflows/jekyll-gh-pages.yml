@@ -19,6 +19,6 @@ jobs:
           npm run build
 
       - name: Deploy 🚀
-        uses: felicitadaniel/TIC-TAC-TOE
+        uses: felicitadaniel/TIC-TAC-TOE@v1
         with:
           folder: build # The folder the action should deploy.
